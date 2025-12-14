@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Kenangan - Untuk Kamu dan Dia</title>
+    <title>Selamat Ulang Tahun! 🎉</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @keyframes twinkle {
@@ -20,44 +20,73 @@
         .float {
             animation: float 3s ease-in-out infinite;
         }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+        .bounce {
+            animation: bounce 2s ease-in-out infinite;
+        }
+        @keyframes confetti-fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        .confetti {
+            animation: confetti-fall 5s linear infinite;
+        }
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.8s ease-out forwards;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
     
-    <!-- Starry Background -->
+    <!-- Stars Background -->
     <div id="stars" class="fixed inset-0 pointer-events-none z-0"></div>
 
     <!-- Hero Section -->
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative z-10">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-pulse">Website Kenangan</h1>
-        <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
-            Untuk Kamu dan Dia.
+        <div class="bounce mb-8">
+            <span class="text-9xl">🎂</span>
+        </div>
+        <h1 class="text-6xl md:text-7xl font-bold mb-4 animate-pulse bg-gradient-to-r from-pink-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            SELAMAT
+        </h1>
+        <h2 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+            ULANG TAHUN!
         </h2>
-        <p class="text-gray-300 max-w-2xl mb-8 text-lg">
-            Tempat menyimpan cerita, foto, dan lagu favorit kalian berdua. Semua momen spesial tersimpan di sini.
+        <p class="text-2xl md:text-3xl font-semibold mb-8 text-pink-300">
+            🎉 Untuk Orang Spesial 🎉
         </p>
-        <button onclick="document.getElementById('playlist').scrollIntoView({behavior:'smooth'})" 
-                class="bg-gradient-to-r from-pink-500 to-purple-500 px-8 py-4 rounded-full text-lg font-semibold hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-pink-500/50">
-            Lihat Cerita Kita
+        <p class="text-gray-300 max-w-2xl mb-8 text-lg">
+            Hari ini adalah hari istimewamu! Semoga tahun ini penuh dengan kebahagiaan, cinta, dan kesuksesan!
+        </p>
+        <button onclick="document.getElementById('wishes').scrollIntoView({behavior:'smooth'})" 
+                class="bg-gradient-to-r from-pink-500 to-purple-500 px-8 py-4 rounded-full text-lg font-bold hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-pink-500/50">
+            Buka Ucapan Spesial 🎁
         </button>
     </section>
 
-    <!-- Playlist Section -->
+    <!-- Music Playlist Section -->
     <section id="playlist" class="py-20 px-4 relative z-10">
         <div class="max-w-6xl mx-auto">
             <h1 class="text-4xl font-bold text-center mb-3 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-                🎵 Our Playlist
+                🎵 Birthday Playlist
             </h1>
-            <p class="text-center text-gray-400 mb-12">Lagu Favorit Kita 🎶</p>
+            <p class="text-center text-gray-400 mb-12">Lagu Spesial untuk Hari Istimewamu 🎶</p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Song Card 1 -->
                 <div onclick="playSong(0)" class="bg-white/5 backdrop-blur-lg rounded-3xl p-8 text-center cursor-pointer hover:scale-105 hover:bg-white/10 transition-all duration-300 border border-white/10">
                     <div class="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center text-5xl">
-                        ❤️
+                        🎂
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Perfect</h3>
-                    <p class="text-gray-400 mb-4">Ed Sheeran</p>
+                    <h3 class="text-xl font-bold mb-2">Happy Birthday</h3>
+                    <p class="text-gray-400 mb-4">Traditional</p>
                     <button class="bg-white/20 hover:bg-white/30 px-6 py-2 rounded-full transition-all">
                         Play Song
                     </button>
@@ -66,10 +95,10 @@
                 <!-- Song Card 2 -->
                 <div onclick="playSong(1)" class="bg-white/5 backdrop-blur-lg rounded-3xl p-8 text-center cursor-pointer hover:scale-105 hover:bg-white/10 transition-all duration-300 border border-white/10">
                     <div class="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center text-5xl">
-                        ❤️
+                        🎉
                     </div>
-                    <h3 class="text-xl font-bold mb-2">A Thousand Years</h3>
-                    <p class="text-gray-400 mb-4">Christina Perri</p>
+                    <h3 class="text-xl font-bold mb-2">Celebration</h3>
+                    <p class="text-gray-400 mb-4">Party Song</p>
                     <button class="bg-white/20 hover:bg-white/30 px-6 py-2 rounded-full transition-all">
                         Play Song
                     </button>
@@ -78,10 +107,10 @@
                 <!-- Song Card 3 -->
                 <div onclick="playSong(2)" class="bg-white/5 backdrop-blur-lg rounded-3xl p-8 text-center cursor-pointer hover:scale-105 hover:bg-white/10 transition-all duration-300 border border-white/10">
                     <div class="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-red-400 to-orange-500 rounded-2xl flex items-center justify-center text-5xl">
-                        ❤️
+                        🎈
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Golden Hour</h3>
-                    <p class="text-gray-400 mb-4">JVKE</p>
+                    <h3 class="text-xl font-bold mb-2">Birthday Wishes</h3>
+                    <p class="text-gray-400 mb-4">Special Song</p>
                     <button class="bg-white/20 hover:bg-white/30 px-6 py-2 rounded-full transition-all">
                         Play Song
                     </button>
@@ -90,131 +119,522 @@
         </div>
     </section>
 
-    <!-- Memory Section -->
+    <!-- Birthday Wishes Section -->
+    <section id="wishes" class="py-20 px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                💝 Ucapan Spesial Untukmu
+            </h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Wish Card 1 -->
+                <div class="bg-white/5 backdrop-blur-lg rounded-3xl p-8 text-center hover:scale-105 transition-all duration-300 border border-white/10 opacity-0 animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="text-7xl mb-4 bounce" style="animation-delay: 0.2s;">🎈</div>
+                    <h3 class="text-2xl font-bold mb-4 text-pink-300">Kesehatan</h3>
+                    <p class="text-gray-300">
+                        Semoga selalu sehat, kuat, dan penuh energi untuk menjalani hari-harimu!
+                    </p>
+                </div>
+
+                <!-- Wish Card 2 -->
+                <div class="bg-white/5 backdrop-blur-lg rounded-3xl p-8 text-center hover:scale-105 transition-all duration-300 border border-white/10 opacity-0 animate-fade-in" style="animation-delay: 0.4s;">
+                    <div class="text-7xl mb-4 bounce" style="animation-delay: 0.4s;">⭐</div>
+                    <h3 class="text-2xl font-bold mb-4 text-purple-300">Kesuksesan</h3>
+                    <p class="text-gray-300">
+                        Semoga semua impian dan cita-citamu tercapai dengan gemilang!
+                    </p>
+                </div>
+
+                <!-- Wish Card 3 -->
+                <div class="bg-white/5 backdrop-blur-lg rounded-3xl p-8 text-center hover:scale-105 transition-all duration-300 border border-white/10 opacity-0 animate-fade-in" style="animation-delay: 0.6s;">
+                    <div class="text-7xl mb-4 bounce" style="animation-delay: 0.6s;">💖</div>
+                    <h3 class="text-2xl font-bold mb-4 text-pink-300">Kebahagiaan</h3>
+                    <p class="text-gray-300">
+                        Semoga setiap harimu dipenuhi senyuman, tawa, dan kebahagiaan!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memory Stats Countdown -->
     <section class="py-20 px-4 relative z-10">
         <div class="max-w-5xl mx-auto">
-            <h1 class="text-4xl font-bold text-center mb-16"> Kenangan Kita</h1>
-
-            <!-- Memory 1 - Image Right -->
-            <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
-                <div class="flex-1 order-2 md:order-1">
-                    <span class="inline-flex items-center gap-2 bg-pink-500/20 text-pink-400 px-4 py-2 rounded-full text-sm mb-4">
-                        💖 Kenangan 1
-                    </span>
-                    <h3 class="text-3xl font-bold mb-4">Pertama kali ketemu 💫</h3>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        Momen ketika mata kita pertama kali bertemu, dan dunia serasa berhenti. Senyummu yang membuat hatiku berdebar kencang.
-                    </p>
-                    <div class="text-gray-400 space-y-2">
-                        <p>📅 14 Februari 2023</p>
-                        <p>📍 Coffee Shop Favorite</p>
-                    </div>
+            <h2 class="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                Dalam Angka
+            </h2>
+            <p class="text-center text-gray-400 mb-12">Perjalanan hidupmu yang luar biasa ✨</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 text-center border border-pink-400/20 hover:scale-105 transition-all">
+                    <div class="text-5xl mb-3">🎂</div>
+                    <div class="text-4xl font-bold text-pink-400 mb-2 counter" data-target="21">0</div>
+                    <p class="text-gray-300 text-sm">Tahun Menakjubkan</p>
                 </div>
-                <div class="flex-1 order-1 md:order-2">
-                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800" 
-                         alt="Memory 1" 
-                         class="w-full h-96 object-cover rounded-3xl shadow-2xl hover:scale-105 hover:rotate-2 transition-all duration-500">
+                
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 text-center border border-purple-400/20 hover:scale-105 transition-all">
+                    <div class="text-5xl mb-3">😊</div>
+                    <div class="text-4xl font-bold text-purple-400 mb-2 counter" data-target="7665">0</div>
+                    <p class="text-gray-300 text-sm">Hari Penuh Makna</p>
                 </div>
-            </div>
-
-            <!-- Memory 2 - Image Left -->
-            <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-20">
-                <div class="flex-1">
-                    <span class="inline-flex items-center gap-2 bg-pink-500/20 text-pink-400 px-4 py-2 rounded-full text-sm mb-4">
-                        💖 Kenangan 2
-                    </span>
-                    <h3 class="text-3xl font-bold mb-4">First Date 💕</h3>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        Saat yang tidak akan pernah aku lupakan. Saat kita menghabiskan waktu bersama untuk pertama kalinya di tepi pantai.
-                    </p>
-                    <div class="text-gray-400 space-y-2">
-                        <p>📅 20 Februari 2023</p>
-                        <p>📍 Sunset Beach</p>
-                    </div>
+                
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 text-center border border-pink-400/20 hover:scale-105 transition-all">
+                    <div class="text-5xl mb-3">💫</div>
+                    <div class="text-4xl font-bold text-pink-400 mb-2 counter" data-target="999">0</div>
+                    <p class="text-gray-300 text-sm">Kenangan Indah</p>
                 </div>
-                <div class="flex-1">
-                    <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=800" 
-                         alt="Memory 2" 
-                         class="w-full h-96 object-cover rounded-3xl shadow-2xl hover:scale-105 hover:-rotate-2 transition-all duration-500">
-                </div>
-            </div>
-
-            <!-- Memory 3 - Image Right -->
-            <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
-                <div class="flex-1 order-2 md:order-1">
-                    <span class="inline-flex items-center gap-2 bg-pink-500/20 text-pink-400 px-4 py-2 rounded-full text-sm mb-4">
-                        💖 Kenangan 3
-                    </span>
-                    <h3 class="text-3xl font-bold mb-4">Anniversary Pertama 🎉</h3>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        Setahun sudah kita bersama. Terima kasih untuk semua kenangan indah yang telah kita buat bersama.
-                    </p>
-                    <div class="text-gray-400 space-y-2">
-                        <p>📅 14 Februari 2024</p>
-                        <p>📍 Our Special Place</p>
-                    </div>
-                </div>
-                <div class="flex-1 order-1 md:order-2">
-                    <img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=800" 
-                         alt="Memory 3" 
-                         class="w-full h-96 object-cover rounded-3xl shadow-2xl hover:scale-105 hover:rotate-2 transition-all duration-500">
+                
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 text-center border border-purple-400/20 hover:scale-105 transition-all">
+                    <div class="text-5xl mb-3">⭐</div>
+                    <div class="text-4xl font-bold text-purple-400 mb-2">∞</div>
+                    <p class="text-gray-300 text-sm">Kebahagiaan Mendatang</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Distance Section -->
-    <section class="py-20 px-4 text-center relative z-10">
-        <h1 class="text-4xl font-bold mb-6 leading-relaxed">
-            Walau jauh, aku tetap ngerasa<br>
-            <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">kamu deket</span>
-        </h1>
-        <p class="text-gray-400 mb-12">Jarak hanya angka, yang penting hati kita selalu terhubung 💕</p>
-
-        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 max-w-3xl mx-auto">
-            <div class="text-center">
-                <div class="w-20 h-20 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl float">
-                    🌸
+    <!-- Timeline Section -->
+    <section class="py-20 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                📖 Perjalanan Hidup
+            </h2>
+            <p class="text-center text-gray-400 mb-16">Dari masa kecil hingga sekarang</p>
+            
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-pink-400 via-purple-400 to-pink-400 opacity-30"></div>
+                
+                <!-- Timeline Item 1 -->
+                <div class="mb-12 flex items-center w-full">
+                    <div class="w-1/2 pr-8 text-right">
+                        <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:scale-105 transition-all">
+                            <h3 class="text-xl font-bold text-pink-300 mb-2">Lahir ke Dunia 👶</h3>
+                            <p class="text-gray-300 mb-2">Awal dari segalanya! Dunia menyambutmu dengan penuh cinta.</p>
+                            <span class="text-sm text-gray-500">Hari yang spesial</span>
+                        </div>
+                    </div>
+                    <div class="relative flex items-center justify-center w-8 h-8 bg-gradient-to-r from-pink-400 to-pink-600 rounded-full z-10 border-4 border-slate-900">
+                        <div class="w-3 h-3 bg-white rounded-full"></div>
+                    </div>
+                    <div class="w-1/2 pl-8"></div>
                 </div>
-                <p class="font-bold text-lg">Kamu — Di sana</p>
-            </div>
-
-            <div class="relative flex items-center justify-center">
-                <div class="w-24 md:w-48 h-0.5 bg-gradient-to-r from-transparent via-pink-400 to-transparent"></div>
-                <span class="absolute text-2xl float">💕</span>
-            </div>
-
-            <div class="text-center">
-                <div class="w-20 h-20 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl float" style="animation-delay: 1s;">
-                    💖
+                
+                <!-- Timeline Item 2 -->
+                <div class="mb-12 flex items-center w-full">
+                    <div class="w-1/2 pr-8"></div>
+                    <div class="relative flex items-center justify-center w-8 h-8 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full z-10 border-4 border-slate-900">
+                        <div class="w-3 h-3 bg-white rounded-full"></div>
+                    </div>
+                    <div class="w-1/2 pl-8">
+                        <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:scale-105 transition-all">
+                            <h3 class="text-xl font-bold text-purple-300 mb-2">Masa Kecil 🎨</h3>
+                            <p class="text-gray-300 mb-2">Penuh dengan permainan, tawa, dan kenangan manis yang tak terlupakan.</p>
+                            <span class="text-sm text-gray-500">Tahun keemasan</span>
+                        </div>
+                    </div>
                 </div>
-                <p class="font-bold text-lg">Aku — Di sini</p>
+                
+                <!-- Timeline Item 3 -->
+                <div class="mb-12 flex items-center w-full">
+                    <div class="w-1/2 pr-8 text-right">
+                        <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:scale-105 transition-all">
+                            <h3 class="text-xl font-bold text-pink-300 mb-2">Petualangan Remaja 🌟</h3>
+                            <p class="text-gray-300 mb-2">Menemukan jati diri, bertemu teman-teman hebat, dan mulai mengejar mimpi.</p>
+                            <span class="text-sm text-gray-500">Masa eksplorasi</span>
+                        </div>
+                    </div>
+                    <div class="relative flex items-center justify-center w-8 h-8 bg-gradient-to-r from-pink-400 to-pink-600 rounded-full z-10 border-4 border-slate-900">
+                        <div class="w-3 h-3 bg-white rounded-full"></div>
+                    </div>
+                    <div class="w-1/2 pl-8"></div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="mb-12 flex items-center w-full">
+                    <div class="w-1/2 pr-8"></div>
+                    <div class="relative flex items-center justify-center w-8 h-8 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full z-10 border-4 border-slate-900">
+                        <div class="w-3 h-3 bg-white rounded-full"></div>
+                    </div>
+                    <div class="w-1/2 pl-8">
+                        <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:scale-105 transition-all">
+                            <h3 class="text-xl font-bold text-purple-300 mb-2">Hari Ini 🎉</h3>
+                            <p class="text-gray-300 mb-2">Dan sekarang, kamu ada di sini! Lebih kuat, lebih bijak, dan lebih luar biasa dari sebelumnya!</p>
+                            <span class="text-sm text-gray-500">Momen spesial</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <p class="text-gray-500 italic mt-12">
-            "Distance means so little when someone means so much"
-        </p>
     </section>
 
-    <!-- Footer Section -->
-    <section class="py-20 px-4 text-center relative z-10">
-        <h1 class="text-3xl font-bold mb-8">
-            Setiap kenangan kita<br>
-            <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">tersimpan di sini, selamanya</span>
-        </h1>
+    <!-- Achievement Badges -->
+    <section class="py-20 px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                🏆 Achievement Unlocked!
+            </h2>
+            <p class="text-center text-gray-400 mb-12">Pencapaian luar biasa tahun ini</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 text-center border border-yellow-400/30 hover:scale-105 hover:border-yellow-400/60 transition-all cursor-pointer">
+                    <div class="text-6xl mb-3">🌟</div>
+                    <h3 class="text-lg font-bold text-yellow-300 mb-2">Survivor</h3>
+                    <p class="text-gray-400 text-sm">Bertahan dan berkembang di tahun ini!</p>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 text-center border border-pink-400/30 hover:scale-105 hover:border-pink-400/60 transition-all cursor-pointer">
+                    <div class="text-6xl mb-3">💪</div>
+                    <h3 class="text-lg font-bold text-pink-300 mb-2">Strong Soul</h3>
+                    <p class="text-gray-400 text-sm">Melewati tantangan dengan kepala tegak</p>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 text-center border border-purple-400/30 hover:scale-105 hover:border-purple-400/60 transition-all cursor-pointer">
+                    <div class="text-6xl mb-3">😊</div>
+                    <h3 class="text-lg font-bold text-purple-300 mb-2">Happiness Maker</h3>
+                    <p class="text-gray-400 text-sm">Membuat orang lain tersenyum</p>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 text-center border border-blue-400/30 hover:scale-105 hover:border-blue-400/60 transition-all cursor-pointer">
+                    <div class="text-6xl mb-3">🎯</div>
+                    <h3 class="text-lg font-bold text-blue-300 mb-2">Dream Chaser</h3>
+                    <p class="text-gray-400 text-sm">Terus mengejar impian tanpa henti</p>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 text-center border border-green-400/30 hover:scale-105 hover:border-green-400/60 transition-all cursor-pointer">
+                    <div class="text-6xl mb-3">🌈</div>
+                    <h3 class="text-lg font-bold text-green-300 mb-2">Positivity Master</h3>
+                    <p class="text-gray-400 text-sm">Selalu melihat sisi baik dari segalanya</p>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 text-center border border-red-400/30 hover:scale-105 hover:border-red-400/60 transition-all cursor-pointer">
+                    <div class="text-6xl mb-3">❤️</div>
+                    <h3 class="text-lg font-bold text-red-300 mb-2">Love Spreader</h3>
+                    <p class="text-gray-400 text-sm">Menyebarkan cinta ke sekitar</p>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 text-center border border-orange-400/30 hover:scale-105 hover:border-orange-400/60 transition-all cursor-pointer">
+                    <div class="text-6xl mb-3">🔥</div>
+                    <h3 class="text-lg font-bold text-orange-300 mb-2">On Fire</h3>
+                    <p class="text-gray-400 text-sm">Produktivitas level maksimal!</p>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 text-center border border-indigo-400/30 hover:scale-105 hover:border-indigo-400/60 transition-all cursor-pointer">
+                    <div class="text-6xl mb-3">👑</div>
+                    <h3 class="text-lg font-bold text-indigo-300 mb-2">Royalty</h3>
+                    <p class="text-gray-400 text-sm">Kamu memang istimewa!</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="max-w-2xl mx-auto bg-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10">
-            <span class="text-5xl block mb-6">💝</span>
-            <p class="text-gray-300 leading-relaxed">
-                Terima kasih sudah menjadi bagian dari hidupku. Setiap detik bersamamu adalah hadiah yang tak ternilai. 
-                <br><br>
-                Setiap kenangan kita akan selalu terukir dalam hati, tidak peduli jarak memisahkan kita. 
-                Karena cinta kita lebih kuat dari apapun. ❤️
+    <!-- Message in a Bottle -->
+    <section class="py-20 px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-12 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                💌 Pesan dalam Botol
+            </h2>
+            
+            <div id="bottleContainer" class="relative">
+                <div id="bottle" class="cursor-pointer transition-all duration-500 hover:scale-110 mx-auto w-32" onclick="openBottle()">
+                    <svg viewBox="0 0 100 200" class="w-full drop-shadow-2xl">
+                        <defs>
+                            <linearGradient id="glassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:0.6" />
+                                <stop offset="100%" style="stop-color:#4682B4;stop-opacity:0.8" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Bottle -->
+                        <path d="M 35 40 L 35 20 Q 35 10, 50 10 Q 65 10, 65 20 L 65 40 Q 70 45, 70 60 L 70 170 Q 70 185, 50 185 Q 30 185, 30 170 L 30 60 Q 30 45, 35 40" 
+                              fill="url(#glassGradient)" stroke="#4682B4" stroke-width="2"/>
+                        <!-- Cork -->
+                        <rect x="40" y="5" width="20" height="10" fill="#8B4513" rx="2"/>
+                        <!-- Message inside -->
+                        <rect x="40" y="80" width="20" height="40" fill="#FFE4B5" rx="2" opacity="0.8"/>
+                        <!-- Shine effect -->
+                        <ellipse cx="45" cy="70" rx="8" ry="30" fill="#FFF" opacity="0.3"/>
+                    </svg>
+                </div>
+                <p class="text-gray-400 mt-6 mb-2">Klik botol untuk membuka pesan</p>
+                <p class="text-sm text-gray-500">✨ Ada sesuatu yang spesial di dalamnya</p>
+                
+                <div id="secretMessage" class="hidden mt-8 bg-gradient-to-br from-pink-500/20 to-purple-500/20 backdrop-blur-lg rounded-3xl p-8 border-2 border-pink-400/40 animate-fade-in">
+                    <div class="text-6xl mb-6">💝</div>
+                    <h3 class="text-2xl font-bold text-pink-300 mb-4">Pesan Rahasia Untukmu</h3>
+                    <p class="text-gray-200 leading-relaxed mb-4">
+                        Di tahun yang baru ini, aku berharap semua impianmu menjadi kenyataan. 
+                        Kamu layak mendapatkan semua kebahagiaan di dunia ini.
+                    </p>
+                    <p class="text-gray-200 leading-relaxed mb-4">
+                        Terima kasih sudah menjadi pribadi yang luar biasa. 
+                        Kehadiranmu membuat dunia jadi tempat yang lebih baik. 💫
+                    </p>
+                    <p class="text-xl font-semibold text-pink-300 italic">
+                        "Kamu bukan hanya bertambah tua, tapi bertambah menakjubkan!" ✨
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Message Section -->
+    <section class="py-20 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white/5 backdrop-blur-xl rounded-3xl p-12 border border-white/10">
+                <div class="text-center mb-8">
+                    <span class="text-8xl block mb-6">🎁</span>
+                    <h2 class="text-4xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Pesan Spesial</h2>
+                </div>
+                
+                <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+                    <p>
+                        Di hari istimewa ini, aku ingin kamu tahu betapa berharganya kehadiranmu dalam hidup ini. 
+                        Setiap tahun yang berlalu membuat kamu semakin luar biasa!
+                    </p>
+                    <p>
+                        Terima kasih untuk semua momen bahagia yang telah kita lewati bersama. 
+                        Kamu adalah anugerah yang sangat berharga. ✨
+                    </p>
+                    <p class="text-xl font-semibold text-center mt-8 text-pink-300">
+                        Selamat ulang tahun! Semoga tahun ini menjadi tahun terbaikmu! 🎊
+                    </p>
+                </div>
+
+                <div class="flex justify-center gap-4 mt-10">
+                    <div class="text-6xl float">🎉</div>
+                    <div class="text-6xl float" style="animation-delay: 0.5s;">🎂</div>
+                    <div class="text-6xl float" style="animation-delay: 1s;">🎈</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Birthday Candle Section -->
+    <section class="py-20 px-4 text-center relative z-10">
+        <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-lg rounded-3xl p-12 border-2 border-pink-400/30 shadow-2xl">
+            <h2 class="text-4xl font-bold mb-12 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Tiup Lilinnya!</h2>
+            
+            <div class="max-w-md mx-auto">
+                <div id="cakeContainer" class="relative z-20 bg-purple-900/30 rounded-2xl p-8">
+                    <!-- Birthday Cake SVG - Better Design -->
+                    <div class="mb-8 hover:scale-110 transition-transform cursor-pointer select-none mx-auto" style="width: 200px; height: 200px;" onclick="blowCandle()">
+                        <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-2xl">
+                            <!-- Shadow -->
+                            <ellipse cx="100" cy="180" rx="80" ry="12" fill="#000000" opacity="0.2"/>
+                            
+                            <!-- Plate -->
+                            <ellipse cx="100" cy="170" rx="85" ry="15" fill="#E6E6FA"/>
+                            <ellipse cx="100" cy="168" rx="85" ry="12" fill="#DDA0DD"/>
+                            
+                            <!-- Bottom Layer -->
+                            <rect x="35" y="130" width="130" height="40" fill="#FF69B4" rx="8"/>
+                            <rect x="35" y="128" width="130" height="8" fill="#FF1493" rx="4"/>
+                            <ellipse cx="100" cy="130" rx="65" ry="10" fill="#FF1493"/>
+                            
+                            <!-- Frosting Bottom -->
+                            <path d="M 35 130 Q 45 120, 55 130 T 75 130 T 95 130 T 115 130 T 135 130 T 155 130 T 165 130" 
+                                  fill="#FFB6C1" stroke="none"/>
+                            
+                            <!-- Middle Layer -->
+                            <rect x="45" y="90" width="110" height="40" fill="#FF1493" rx="6"/>
+                            <rect x="45" y="88" width="110" height="8" fill="#C71585" rx="4"/>
+                            <ellipse cx="100" cy="90" rx="55" ry="8" fill="#C71585"/>
+                            
+                            <!-- Frosting Middle -->
+                            <path d="M 45 90 Q 55 82, 65 90 T 85 90 T 105 90 T 125 90 T 145 90 T 155 90" 
+                                  fill="#FFB6C1" stroke="none"/>
+                            
+                            <!-- Top Layer -->
+                            <rect x="55" y="55" width="90" height="35" fill="#FF69B4" rx="6"/>
+                            <rect x="55" y="53" width="90" height="8" fill="#FF1493" rx="4"/>
+                            <ellipse cx="100" cy="55" rx="45" ry="8" fill="#FF1493"/>
+                            
+                            <!-- Frosting Top -->
+                            <path d="M 55 55 Q 65 48, 75 55 T 95 55 T 115 55 T 135 55 T 145 55" 
+                                  fill="#FFDDF4" stroke="none"/>
+                            
+                            <!-- Decorative Dots -->
+                            <circle cx="60" cy="110" r="4" fill="#FFF"/>
+                            <circle cx="80" cy="115" r="4" fill="#FFF"/>
+                            <circle cx="100" cy="110" r="4" fill="#FFF"/>
+                            <circle cx="120" cy="115" r="4" fill="#FFF"/>
+                            <circle cx="140" cy="110" r="4" fill="#FFF"/>
+                            
+                            <circle cx="70" cy="145" r="4" fill="#FFF"/>
+                            <circle cx="90" cy="150" r="4" fill="#FFF"/>
+                            <circle cx="110" cy="150" r="4" fill="#FFF"/>
+                            <circle cx="130" cy="145" r="4" fill="#FFF"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Candles - Better Design -->
+                    <div id="candles" class="flex justify-center gap-8 mb-8">
+                        <div class="candle select-none">
+                            <svg viewBox="0 0 40 100" class="w-10 h-24 mx-auto drop-shadow-lg">
+                                <!-- Flame -->
+                                <ellipse cx="20" cy="8" rx="10" ry="12" fill="#FFA500" opacity="0.8">
+                                    <animate attributeName="ry" values="12;14;12" dur="0.5s" repeatCount="indefinite"/>
+                                </ellipse>
+                                <ellipse cx="20" cy="8" rx="6" ry="8" fill="#FFD700">
+                                    <animate attributeName="ry" values="8;10;8" dur="0.5s" repeatCount="indefinite"/>
+                                </ellipse>
+                                <ellipse cx="20" cy="10" rx="3" ry="5" fill="#FFFF00">
+                                    <animate attributeName="ry" values="5;6;5" dur="0.5s" repeatCount="indefinite"/>
+                                </ellipse>
+                                
+                                <!-- Wick -->
+                                <rect x="19" y="15" width="2" height="8" fill="#333"/>
+                                
+                                <!-- Candle Body -->
+                                <rect x="12" y="23" width="16" height="60" fill="#FFD700" rx="3"/>
+                                <rect x="12" y="23" width="16" height="10" fill="#FFA500" rx="3"/>
+                                
+                                <!-- Stripes -->
+                                <rect x="12" y="40" width="16" height="3" fill="#FF69B4" opacity="0.6"/>
+                                <rect x="12" y="55" width="16" height="3" fill="#FF69B4" opacity="0.6"/>
+                                <rect x="12" y="70" width="16" height="3" fill="#FF69B4" opacity="0.6"/>
+                                
+                                <!-- Shine -->
+                                <rect x="14" y="28" width="3" height="50" fill="#FFF" opacity="0.4" rx="1"/>
+                            </svg>
+                        </div>
+                        <div class="candle select-none">
+                            <svg viewBox="0 0 40 100" class="w-10 h-24 mx-auto drop-shadow-lg">
+                                <!-- Flame -->
+                                <ellipse cx="20" cy="8" rx="10" ry="12" fill="#FFA500" opacity="0.8">
+                                    <animate attributeName="ry" values="12;14;12" dur="0.6s" repeatCount="indefinite"/>
+                                </ellipse>
+                                <ellipse cx="20" cy="8" rx="6" ry="8" fill="#FFD700">
+                                    <animate attributeName="ry" values="8;10;8" dur="0.6s" repeatCount="indefinite"/>
+                                </ellipse>
+                                <ellipse cx="20" cy="10" rx="3" ry="5" fill="#FFFF00">
+                                    <animate attributeName="ry" values="5;6;5" dur="0.6s" repeatCount="indefinite"/>
+                                </ellipse>
+                                
+                                <!-- Wick -->
+                                <rect x="19" y="15" width="2" height="8" fill="#333"/>
+                                
+                                <!-- Candle Body -->
+                                <rect x="12" y="23" width="16" height="60" fill="#FFD700" rx="3"/>
+                                <rect x="12" y="23" width="16" height="10" fill="#FFA500" rx="3"/>
+                                
+                                <!-- Stripes -->
+                                <rect x="12" y="40" width="16" height="3" fill="#FF69B4" opacity="0.6"/>
+                                <rect x="12" y="55" width="16" height="3" fill="#FF69B4" opacity="0.6"/>
+                                <rect x="12" y="70" width="16" height="3" fill="#FF69B4" opacity="0.6"/>
+                                
+                                <!-- Shine -->
+                                <rect x="14" y="28" width="3" height="50" fill="#FFF" opacity="0.4" rx="1"/>
+                            </svg>
+                        </div>
+                        <div class="candle select-none">
+                            <svg viewBox="0 0 40 100" class="w-10 h-24 mx-auto drop-shadow-lg">
+                                <!-- Flame -->
+                                <ellipse cx="20" cy="8" rx="10" ry="12" fill="#FFA500" opacity="0.8">
+                                    <animate attributeName="ry" values="12;14;12" dur="0.7s" repeatCount="indefinite"/>
+                                </ellipse>
+                                <ellipse cx="20" cy="8" rx="6" ry="8" fill="#FFD700">
+                                    <animate attributeName="ry" values="8;10;8" dur="0.7s" repeatCount="indefinite"/>
+                                </ellipse>
+                                <ellipse cx="20" cy="10" rx="3" ry="5" fill="#FFFF00">
+                                    <animate attributeName="ry" values="5;6;5" dur="0.7s" repeatCount="indefinite"/>
+                                </ellipse>
+                                
+                                <!-- Wick -->
+                                <rect x="19" y="15" width="2" height="8" fill="#333"/>
+                                
+                                <!-- Candle Body -->
+                                <rect x="12" y="23" width="16" height="60" fill="#FFD700" rx="3"/>
+                                <rect x="12" y="23" width="16" height="10" fill="#FFA500" rx="3"/>
+                                
+                                <!-- Stripes -->
+                                <rect x="12" y="40" width="16" height="3" fill="#FF69B4" opacity="0.6"/>
+                                <rect x="12" y="55" width="16" height="3" fill="#FF69B4" opacity="0.6"/>
+                                <rect x="12" y="70" width="16" height="3" fill="#FF69B4" opacity="0.6"/>
+                                
+                                <!-- Shine -->
+                                <rect x="14" y="28" width="3" height="50" fill="#FFF" opacity="0.4" rx="1"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <p id="candleMessage" class="text-xl font-semibold mb-4 text-gray-300 mt-6">Klik kue untuk meniup lilin!</p>
+                
+                <div id="wishMessage" class="hidden bg-white/10 backdrop-blur-lg rounded-2xl p-6 mt-8 border-2 border-pink-300/50">
+                    <p class="text-2xl font-bold mb-2 text-pink-300">⭐ Wish Granted! ⭐</p>
+                    <p class="text-lg text-gray-300">Semoga semua harapanmu terwujud!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Memories Section -->
+    <section class="py-20 px-4 relative z-10">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">📸 Momen Bahagia Bersama</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Photo 1 -->
+                <div class="bg-white/5 backdrop-blur-lg rounded-3xl p-4 border border-white/10 hover:scale-105 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800" 
+                         alt="Birthday Memory" 
+                         class="w-full h-64 object-cover rounded-2xl mb-4">
+                    <p class="text-center font-semibold text-lg text-gray-300">Senyuman Terindah 😊</p>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="bg-white/5 backdrop-blur-lg rounded-3xl p-4 border border-white/10 hover:scale-105 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800" 
+                         alt="Birthday Memory" 
+                         class="w-full h-64 object-cover rounded-2xl mb-4">
+                    <p class="text-center font-semibold text-lg text-gray-300">Momen Bersama 🎊</p>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="bg-white/5 backdrop-blur-lg rounded-3xl p-4 border border-white/10 hover:scale-105 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=800" 
+                         alt="Birthday Memory" 
+                         class="w-full h-64 object-cover rounded-2xl mb-4">
+                    <p class="text-center font-semibold text-lg text-gray-300">Kebahagiaan Kita 🎉</p>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="bg-white/5 backdrop-blur-lg rounded-3xl p-4 border border-white/10 hover:scale-105 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800" 
+                         alt="Birthday Memory" 
+                         class="w-full h-64 object-cover rounded-2xl mb-4">
+                    <p class="text-center font-semibold text-lg text-gray-300">Kenangan Indah 💝</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Message -->
+    <section id="finalSection" class="py-20 px-4 text-center relative z-10 overflow-hidden">
+        <!-- Fireworks Container -->
+        <div id="fireworksContainer" class="fixed inset-0 pointer-events-none z-0"></div>
+        
+        <div class="max-w-3xl mx-auto relative z-10">
+            <div class="text-8xl mb-8 bounce">🎊</div>
+            <h2 class="text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Happy Birthday!</h2>
+            <p class="text-2xl mb-8 text-gray-300">
+                Semoga hari ini menjadi hari yang tak terlupakan!
             </p>
-        </div>
+            <p class="text-lg text-gray-400 italic">
+                "Usia hanyalah angka, tapi kenangan dan kebahagiaan adalah harta yang abadi" ✨
+            </p>
+            
+            <div class="mt-12 flex justify-center gap-4">
+                <div class="text-5xl float">🎈</div>
+                <div class="text-5xl float" style="animation-delay: 0.3s;">🎁</div>
+                <div class="text-5xl float" style="animation-delay: 0.6s;">🎉</div>
+                <div class="text-5xl float" style="animation-delay: 0.9s;">🎊</div>
+                <div class="text-5xl float" style="animation-delay: 1.2s;">🎂</div>
+            </div>
 
-        <p class="text-gray-500 text-sm mt-12">Made with 💖 for us</p>
+            <p class="text-sm text-gray-500 mt-16">Made with 💖 especially for you</p>
+        </div>
     </section>
 
     <!-- Music Player (Fixed Bottom Right) -->
@@ -252,19 +672,19 @@
         // Music player
         const songs = [
             { 
-                title: 'Perfect', 
-                artist: 'Ed Sheeran',
-                url: 'music/Ed Sheeran - Perfect (Piano Cover by Riyandi Kusuma).mp3'
+                title: 'Happy Birthday', 
+                artist: 'Traditional',
+                url: 'music/Romantic Happy Birthday (Arranged by Miranda Wong) Piano Cover.mp3'
             },
             { 
-                title: 'A Thousand Years', 
-                artist: 'Christina Perri',
-                url: 'music/Christina Perri - A Thousand Years (Piano Cover by Riyandi Kusuma).mp3'
+                title: 'Celebration', 
+                artist: 'Party Song',
+                url: 'music/DISKORIA bersama LALEILMANINO, ANDIEN & BANDUNG JAZZ ORCHESTRA  SELAMAT ULANG TAHUN (Lyric Video).mp3'
             },
             { 
-                title: 'Golden Hour', 
-                artist: 'JVKE',
-                url: 'music/JVKE - golden hour (Piano Cover by Riyandi Kusuma).mp3'
+                title: 'Birthday Wishes', 
+                artist: 'Special Song',
+                url: 'music/Bima Tarore - Selamat Ulang Tahun (Official Music Video).mp3'
             }
         ];
 
@@ -312,23 +732,291 @@
             stopMusic();
         });
 
-        // Floating hearts
+        // Candle blow function
+        let candlesBlown = false;
+        
+        function blowCandle() {
+            if (candlesBlown) return;
+            
+            const candlesContainer = document.getElementById('candles');
+            const candles = candlesContainer ? candlesContainer.querySelectorAll('.candle') : [];
+            const candleMessage = document.getElementById('candleMessage');
+            const wishMessage = document.getElementById('wishMessage');
+            
+            if (candles.length === 0) {
+                console.log('No candles found');
+                return;
+            }
+            
+            candles.forEach((candle, index) => {
+                setTimeout(() => {
+                    candle.style.transition = 'all 0.5s';
+                    candle.style.opacity = '0';
+                    candle.style.transform = 'scale(0)';
+                }, index * 200);
+            });
+            
+            setTimeout(() => {
+                candleMessage.textContent = '🎉 Selamat! Lilin sudah ditiup! 🎉';
+                candleMessage.classList.add('text-pink-300');
+                wishMessage.classList.remove('hidden');
+                candlesBlown = true;
+                
+                // Add sparkles
+                for (let i = 0; i < 20; i++) {
+                    createSparkle();
+                }
+            }, 800);
+        }
+
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.textContent = '✨';
+            sparkle.className = 'fixed text-3xl pointer-events-none z-50';
+            sparkle.style.left = (Math.random() * 100) + '%';
+            sparkle.style.top = (Math.random() * 100) + '%';
+            sparkle.style.transition = 'all 2s ease-out';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.style.opacity = '0';
+                sparkle.style.transform = 'scale(3) rotate(180deg)';
+            }, 100);
+            
+            setTimeout(() => sparkle.remove(), 2000);
+        }
+
+        // Floating balloons and hearts
         setInterval(() => {
-            const heart = document.createElement('div');
-            heart.textContent = '💕';
-            heart.className = 'fixed text-3xl opacity-60 pointer-events-none z-0';
-            heart.style.left = Math.random() * 100 + '%';
-            heart.style.bottom = '-50px';
-            heart.style.transition = 'all 4s ease-out';
-            document.body.appendChild(heart);
+            const emoji = document.createElement('div');
+            const emojis = ['🎈', '🎉', '💕', '⭐'];
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.className = 'fixed text-3xl opacity-60 pointer-events-none z-0';
+            emoji.style.left = Math.random() * 100 + '%';
+            emoji.style.bottom = '-50px';
+            emoji.style.transition = 'all 5s ease-out';
+            document.body.appendChild(emoji);
 
             setTimeout(() => {
-                heart.style.bottom = '110vh';
-                heart.style.opacity = '0';
+                emoji.style.bottom = '110vh';
+                emoji.style.transform = `translateX(${(Math.random() - 0.5) * 200}px)`;
+                emoji.style.opacity = '0';
             }, 100);
 
-            setTimeout(() => heart.remove(), 4000);
-        }, 3000);
+            setTimeout(() => emoji.remove(), 5000);
+        }, 2500);
+
+        // Random sparkles
+        setInterval(() => {
+            const sparkle = document.createElement('div');
+            sparkle.textContent = '✨';
+            sparkle.className = 'fixed text-2xl pointer-events-none z-0';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.transition = 'all 1.5s ease-out';
+            sparkle.style.opacity = '0.6';
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => {
+                sparkle.style.opacity = '0';
+                sparkle.style.transform = 'scale(2)';
+            }, 100);
+
+            setTimeout(() => sparkle.remove(), 1500);
+        }, 2000);
+
+        // Fireworks effect when scrolling to final section
+        let fireworksStarted = false;
+        
+        function createFirework() {
+            const container = document.getElementById('fireworksContainer');
+            if (!container) return;
+            
+            const colors = ['#FF69B4', '#FFD700', '#FF1493', '#00BFFF', '#FF6347', '#7B68EE', '#FFA500'];
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * (window.innerHeight * 0.6) + (window.innerHeight * 0.1);
+            
+            // Create explosion
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'fixed rounded-full pointer-events-none';
+                particle.style.width = '8px';
+                particle.style.height = '8px';
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                particle.style.zIndex = '100';
+                
+                const angle = (Math.PI * 2 * i) / 30;
+                const velocity = 100 + Math.random() * 100;
+                const tx = Math.cos(angle) * velocity;
+                const ty = Math.sin(angle) * velocity;
+                
+                container.appendChild(particle);
+                
+                particle.animate([
+                    { 
+                        transform: 'translate(0, 0) scale(1)',
+                        opacity: 1
+                    },
+                    { 
+                        transform: `translate(${tx}px, ${ty}px) scale(0)`,
+                        opacity: 0
+                    }
+                ], {
+                    duration: 1000 + Math.random() * 500,
+                    easing: 'cubic-bezier(0, .9, .57, 1)'
+                }).onfinish = () => particle.remove();
+            }
+            
+            // Create star burst
+            const star = document.createElement('div');
+            star.textContent = '⭐';
+            star.className = 'fixed text-4xl pointer-events-none';
+            star.style.left = x + 'px';
+            star.style.top = y + 'px';
+            star.style.zIndex = '100';
+            container.appendChild(star);
+            
+            star.animate([
+                { transform: 'scale(0) rotate(0deg)', opacity: 1 },
+                { transform: 'scale(2) rotate(180deg)', opacity: 0 }
+            ], {
+                duration: 1000,
+                easing: 'ease-out'
+            }).onfinish = () => star.remove();
+        }
+        
+        function startFireworks() {
+            if (fireworksStarted) return;
+            fireworksStarted = true;
+            
+            // Initial burst
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => createFirework(), i * 200);
+            }
+            
+            // Continuous fireworks
+            setInterval(() => {
+                createFirework();
+            }, 800);
+            
+            // Initial confetti burst
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => createConfetti(), i * 50);
+            }
+            
+            // CONTINUOUS CONFETTI - never stops!
+            setInterval(() => {
+                createConfetti();
+            }, 150);
+        }
+        
+        function createConfetti() {
+            const container = document.getElementById('fireworksContainer');
+            if (!container) return;
+            
+            const colors = ['#FF69B4', '#FFD700', '#FF1493', '#00BFFF', '#FF6347', '#7B68EE', '#FFA500', '#98FB98'];
+            const shapes = ['▀', '▄', '█', '▌', '▐', '●', '■', '♦'];
+            
+            const confetti = document.createElement('div');
+            confetti.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+            confetti.className = 'fixed text-2xl pointer-events-none';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.top = '-50px';
+            confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.zIndex = '100';
+            
+            container.appendChild(confetti);
+            
+            const tx = (Math.random() - 0.5) * 400;
+            const rotation = Math.random() * 720;
+            
+            confetti.animate([
+                { 
+                    transform: 'translateY(0) translateX(0) rotate(0deg)',
+                    opacity: 1
+                },
+                { 
+                    transform: `translateY(${window.innerHeight + 100}px) translateX(${tx}px) rotate(${rotation}deg)`,
+                    opacity: 0.8
+                }
+            ], {
+                duration: 3000 + Math.random() * 2000,
+                easing: 'cubic-bezier(.25,.46,.45,.94)'
+            }).onfinish = () => confetti.remove();
+        }
+        
+        // Detect when user scrolls to final section
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !fireworksStarted) {
+                    startFireworks();
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        const finalSection = document.getElementById('finalSection');
+        if (finalSection) {
+            observer.observe(finalSection);
+        }
+
+        // Counter animation for stats
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+        
+        // Observe counter elements
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        if (!counter.classList.contains('counted')) {
+                            counter.classList.add('counted');
+                            animateCounter(counter);
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const statsSection = document.querySelector('.counter').closest('section');
+        if (statsSection) {
+            counterObserver.observe(statsSection);
+        }
+
+        // Open bottle message
+        function openBottle() {
+            const bottle = document.getElementById('bottle');
+            const message = document.getElementById('secretMessage');
+            
+            bottle.style.transform = 'scale(0.8) rotate(20deg)';
+            bottle.style.opacity = '0';
+            
+            setTimeout(() => {
+                bottle.style.display = 'none';
+                message.classList.remove('hidden');
+                
+                // Create sparkle effect
+                for (let i = 0; i < 30; i++) {
+                    setTimeout(() => createSparkle(), i * 50);
+                }
+            }, 500);
+        }
     </script>
 </body>
 </html>
